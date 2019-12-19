@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Furuta Pendulum</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!--/ Nav Star /-->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#page-top" ><img src="img/logo.png" alt="" height = "60"></a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <center>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#introduction">Introduction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#design">Mechanical</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#controls">Controls</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#hardware">Hardware</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#software">Software</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#challenges">Challenges</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#conclusion">Conclusion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#appendix">Appendix</a>
+          </li>
+        </ul>
+      </div></center>
+    </div>
+  </nav>
+  <!--/ Nav End /-->
+
+  <!--/ Intro Skew Star /-->
+  <div id="home" class="intro route bg-image" style="background-image: url(img/intro-bg.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4">Self-Balancing <br>Furuta Pendulum</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">Brian Lui and Sam Hong,ECE 5725,Fall 2019</span><strong class="text-slider"></strong></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <section id="introduction" class="about-mf sect-pt4 route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="title-box text-center">
+            <h3 class="title-a">
+              Introduction
+            </h3>
+            <p class="subtitle-a">
+             The Rotary Inverted Pendulum, otherwise known as a Furuta pendulum, is a variation on a classic problem in the area of control system, the pendulum on a cart. Instead of being attached to a moving cart constrained to move linearly in only one dimension, the Furuta pendulum’s “cart” is a rotary object. The Furuta pendulum is an example of a nonlinear system, which also makes  it more difficult to maintain upright. It is used to verify the performance of control algorithm techniques, of which can later be used to control more complicated systems, such as an aircraft flight. For an example of a Furuta pendulum, you can see a video of it <a href="https://www.youtube.com/watch?v=XKzzWe15DEw">here</a>.            
+            </p><br>
+            <h3 class="title-b">Our objectives were as follows:  </h3>
+            <div class="list-container">
+              <ol>
+                <li>Design the mechanical system, which composed of the pendulum, the arm, and the box</li>
+                <li>Read real-time data from the IMU</li>
+                <li>Derive the dynamics of the system and design a controller that would stabilize the pendulum vertically upward</li>
+                <li>Control the stepper motor with accuracy</li>
+              </ol>
+
+              <br>
+
+              <center>You can watch a short demo video of our system below. </center>
+
+            </div>
+            <br>
+
+
+            <center><iframe width="560" height="315" src="https://www.youtube.com/embed/0gijIZUjmHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center><br><br>
+            <div class="line-mf"></div>
+
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--/ Design/-->
+  <section id="design" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Mechanical
+            </h3>
+
+
+            <!--
+            <div class="row">
+              <div class="col-md-6">
+                <br><br>
+                <div class="work-box">
+                  <a href="img/initialCAD.png" data-lightbox="gallery-mf">
+                    <div class="work-img">
+                      <img src="img/initialCAD.png" alt="" class="img-fluid">
+                    </div>
+                  </a>
+                </div>
+              </div>
+                <div class="col-md-6">
+                  <p class="subtitle-a">
+                    <br> <br><br><br><br>
+                        To the left is our initial CAD of the system. The pendulum system sits on top of a laser cut box so that the pendulum could be made longer. However, because of the heavy vibrations of the stepper motor, we decided to rigidly attach the motor to the box itself. We later laser cut holes so that we could screw in the motor from the inside of the housing.      
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            -->
+            <h3 class="title-b">Pendulum Assembly</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <br><br><br><br><br>
+                  <figure><center>
+                    <img src='img/assembly.png' alt=''  width="100%"/>
+                    <figcaption>Figure 1. CAD of Furuta pendulum</figcaption>
+                </center></figure>
+              </div>
+              <div class="col-md-6">
+                <p class="subtitle-a">
+                  <br>
+                  We decided to make our system primarily out of aluminum instead of 3D-printing all of the parts. The primary reason for this was that we wanted a very smooth rotation at the point of contact of the pendulum, allowing it to spin freely. The obvious answer for doing this was to use a ball bearing; rolling friction is lower than sliding friction. The system would also be more robust if made of metal, and it would be easier to attach with the shaft of the stepper motor. We purchased aluminum bars and rods from McMaster-Carr. We used aluminum because it is easier to machine aluminum than it is to machine steel, and our application wasn’t subject to any high stresses that aluminum could not handle.         
+                  <br><br>
+                  The relevant parts were machined using a mill and a lathe. For assembling the pieces together, various methods were used. The motor shaft connects with the pendulum assembly through a shaft coupler and two set screws because the two rods are different sizes and need to spin together. This shaft cwas threaded into the aluminum disc and held in place with two nuts at the other end. The pendulum has a ball bearing press fitted into it, and is connected to a shaft that is threaded onto the aluminum disc. If we were to do it over, we wouldn’t thread this piece because it had a tendency to slowly unscrew itself from the momentum of the pendulum. Instead, we would use a set screw to hold the shaft in place.       
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <br><br>
+
+                <!--
+                <div class="work-box">
+                    <a href="img/CAN.png" data-lightbox="gallery-mf">
+                      <div class="work-img">
+                        <img src="img/CAN.png" alt="" class="img-fluid">
+                      </div>
+                    </a>
+                  </div>
+                -->
+
+                <figure><center>
+                    <img src='img/CAN.png' alt=''  width="100%"/>
+                    <figcaption>Figure 2a. The spinny boi of pendulum </figcaption>
+                </center></figure>
+              </div>
+              <div class="col-md-6">
+                <br><br>
+
+                <!--
+                <div class="work-box">
+                    <a href="img/pendulumAssembly.png" data-lightbox="gallery-mf">
+                      <div class="work-img">
+                        <img src="img/pendulumAssembly.png" alt="" class="img-fluid">
+                      </div>         
+                    </a>
+                  </div>-->
+              <figure><center>
+                    <img src='img/pendulumAssembly.png' alt=''  width="100%"/>
+                    <figcaption>Figure 2b. Full assembly of pendulum </figcaption>
+                </center></figure>
+              </div>
+
+              <!--
+              <div class="col-md-4">
+                <br><br>
+                <div class="work-box">
+                    <a href="img/EMMA.png" data-lightbox="gallery-mf">
+                      <div class="work-img">
+                        <img src="img/EMMA.png" alt="" class="img-fluid">
+                      </div>         
+                    </a>
+                </div>
+              </div> 
+            -->
+            </div>
+
+
+
+            <h3 class="title-b">Housing</h3>
+            <p class="subtitle-a">
+            We decided to laser-cut a box to hold the breadboard with the motor driver and excess wires. This allowed us to not have to use any screws or glue because of the tighter tolerances allowed by laser cutting. We made our box out of both ¼’’ acrylic and maple wood: we chose these materials because they could be easily cut at Cornell RPL.
+            <br><br>
+            Originally, we planned on having the motor sit on top of the box to provide enough height for the pendulum to swing around, but the vibrations from the stepper motor required us to have the motor clamped or fixed in some way. We later cut out holes on the top of the box so that we could screw on the motor from the inside of the box. Ideally, long enough screws of the desired width should be used so that the motor sits on top of the box instead of dangling from the top. <br><br>
+            </p>
+
+            <div class="row">
+              <div class="col-md-6">
+                  <figure><center>
+                    <img src='img/box.png' alt=''  width="100%"/>
+                    <figcaption>Figure 3a. Pendulum housing post laser cutting</figcaption>
+                </center></figure>
+              </div>
+              <div class="col-md-6">
+                 <figure><center>
+                    <img src='img/box-2.png' alt=''  width="100%"/>
+                    <figcaption>Figure 3b. Pendulum housing with wiring through it</figcaption>
+                </center></figure>
+              </div>
+            </div>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> >
+
+<!--/ Controls/-->
+  <section id="controls" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Controls
+            </h3>
+            <p class="subtitle-a">
+             The pendulum, if undisturbed, would hang vertically downward because of the force of gravity. Therefore to get the pendulum to pointing vertically upward, we would need to apply a control input through controlling the motor to swing the pendulum up. This analysis was done using MATLAB, but it could have also been done using the SymPy and python-control libraries on Python. 
+             <br><br>
+
+          
+            </p>
+            <h3 class="title-b">Dynamics of Furuta Pendulum</h3>
+            <p class="subtitle-a">
+              We began by first deriving the dynamics of the system. We found a great paper online
+              (<a href="https://www.hindawi.com/journals/jcse/2011/528341/">Benjamin Seth Cazzolato and Zebb Prime 2011, “On the Dynamics of the Furuta Pendulum”</a>). The paper made a few assumptions to the dynamics that wasn’t acceptable for our system and we wanted to understand the system better, so we decided to derive it ourselves.
+              We decided to use the Lagrangian approach towards finding the dynamics, which involves finding the position and velocity of the pendulum. We assumed there was no damping in the system, and the only force acting on the system is gravity. 
+              <br><br>
+              We decided to use the Lagrangian approach towards finding the dynamics, which involves finding the position and velocity of the pendulum, essentially doing the same steps as the paper. We assumed there was no damping in the system, and the only force acting on the system is gravity and the supplied torque. Our state are the two angles and angular velocities: one of the spinning motor and one of the pendulum. 
+              <br><br>
+              We then linearized our system about our desired equilibrium point, corresponding to theta = 0, by taking the Jacobian of the A and B matrices with respect to the state variables. This linearized form is only accurate near the equilibrium points; if the pendulum bar deviated too much away from the upright position, the dynamics would be inaccurate in describing the motion. 
+            </p><br>
+            <div class="row">
+              <div class="col-md-6">
+
+                <!--
+                <div class="work-box">
+                  <a href="img/dynamics1.jpg" data-lightbox="gallery-mf">
+                    <div class="work-img">
+                      <img src="img/dynamics1.jpg" alt="" class="img-fluid">
+                    </div>
+                  </a>
+                </div>-->
+                 <figure><center>
+                    <img src='img/dynamics1.jpg' alt=''  width="100%"/>
+                    <figcaption>Figure 4a. Dynamics derivation of position and velocity for setting up Lagrangian</figcaption>
+                </center></figure>
+              </div>
+              <div class="col-md-6">
+                <!--
+                <div class="work-box">
+                  <a href="img/dynamics3.jpg" data-lightbox="gallery-mf">
+                    <div class="work-img">
+                      <img src="img/dynamics3.jpg" alt="" class="img-fluid">
+                    </div>         
+                  </a>
+                </div>-->
+                 <figure><center>
+                    <img src='img/dynamics3.jpg' alt=''  width="100%"/>
+                    <figcaption>Figure 4b. Linearizing system</figcaption>
+                </center></figure>
+              </div>
+            </div>
+            
+            <h3 class="title-b">Parameters of the System</h3>
+            <p class="subtitle-a">
+            The system is highly dependent on the parameters of the system. We weighed each piece of the system, measured their lengths, estimated their distance from the rotation point to the center of mass, and calculated the moments of inertia theoretically based on their geometries and weights.<br><Br>
+            When finding the moment of inertia of each piece of the assembly, we made a couple of simplifications. One was that we ignored the small differences from the theoretical moment of inertia from the actual that was the result of the holes drilled into the aluminum pieces. They were very small relative to the mass of the disc and pendulum that thus negligible. Also, we assumed that the moment of inertia for the pendulum in the y and z direction were the same. This is because the width and depth of the pendulum are very similar and much smaller than the length of the pendulum. 
+
+           
+            </p><br>
+          <center>
+            <div class="col-md-6">
+              <figure><center>
+                    <img src='img/dynamics2.jpg' alt=''  width="100%"/>
+                    <figcaption>Figure 5. Calculating moments of inertia </figcaption>
+                </center></figure>
+            </div></center>
+
+            <h3 class="title-b">Controls of the System</h3>
+            <p class="subtitle-a">
+            Once the dynamics of the furuta pendulum was derived, we could begin controlling it. We began by first looking at the root locus of the Furuta pendulum without any control: </p>
+            <center>
+            <div class="col-md-6">
+                <figure><center>
+                    <img src='img/rlocus_noDelay.png' alt=''  width="100%"/>
+                    <figcaption>Figure 6. Root locus of system without time delay</figcaption>
+                </center></figure>
+            </div></center>
+
+            <p class="subtitle-a">
+            We could see that the system was unstable because there was a pole in the right half plane of the root locus. This was as expected: the pendulum without any control was not going to be stable. We also compared this root locus with that of other papers on the Furuta pendulum to act as another check that our derivation of the dynamics was correct. 
+            <br><br>
+            Using MATLAB’s sisotool (one of MATLAB’s many god-tier functions), we could look at how the properties of the system changed as we adjusted the controller. In order to get the root locus to be stable, we had to add a pole to the right of the rightmost zero: this would allow the right half plane pole to have a chance of entering the left half plane. Because we had decided to implement the system as a PID controller in the python code, the zero would occur at s = 0. Afterward, we added two zeros in the left hand plane to pull the right hand side poles left as the gain on the system increases. We picked the two zeros with two constraints in mind: we tried to minimize the overshoot because our refresh rate of our system was not very high, and we also tried to minimize the gain required because there were limitations on our system on the speed and torque that our motor could provide. 
+
+            <br><br>
+
+            The designed controller can be seen below: <br><br></p>
+            <center>
+                <figure>
+                    <img src='img/sisotool_noDelay.png' alt=''  width="100%"/>
+                    <figcaption>Figure 7. Sisotool of stable system without time delay</figcaption>
+                </figure></center>
+
+            <p class="subtitle-a">
+            To make our system more realistic, we added a time delay because it doesn’t respond instantaneously: this was done by adding a Padé approximation to the feedback loop of the system. The root locus of this system can be seen: <br></p>
+            <br>
+            <center>
+
+            <div class="col-md-6">
+                <figure><center>
+                    <img src='img/rlocus_delay.png' alt=''  width="100%"/>
+                    <figcaption>Figure 8. Root locus of system with time delay</figcaption>
+                </center></figure>
+            </div></center>
+
+            <p class="subtitle-a">Just like before, sisotool was used to design a controller. The resulting controller is shown: <br></p>
+            <br>
+            <center>
+
+            
+                <center>
+                <figure>
+                    <img src='img/sisotool_delay.png' alt=''  width="100%"/>
+                    <figcaption>Figure 9. Sisotool of stable system with time delay</figcaption>
+                </figure></center>
+           </center>
+
+            <div class="line-mf"></div>
+
+            <p class="subtitle-a">A block diagram of our system is shown below: <br></p>
+            <br>
+            <center>
+            <div class="col-md-6">
+              <figure>
+                    <img src='img/blockDiagram.png' alt=''  width="100%"/>
+                    <figcaption>Figure 10. Block diagram of system</figcaption>
+             </figure>
+              </div>
+            </div></center>
+            <div class="line-mf"></div> <br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--/ Hardware Section /-->
+  <section id="hardware" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Hardware
+            </h3>
+            <h3 class="title-b">IMU</h3>
+            <p class="subtitle-a">
+            An IMU, or inertial measurement unit, was needed because we have to know the position of the pendulum at all times. The reason we decided to use an IMU over a rotary encoder was because it was readily available, which is a choice that we elaborate more on in the ‘Results’ section. 
+            <br><br>
+            Initially, we tried using <a href="https://www.sparkfun.com/products/11028">Sparkfun MPU6050</a>, a 6 degree of freedom IMU (3-axis accelerometer, 3-axis gyroscope). However, while using the sensor for a few weeks, we quickly realized that without an external filter, its accuracy would decrease over time. This would be a big problem in a controls-related project, as it would be difficult to maintain the pendulum upright if we can’t read proper angular position data.
+            <br><br>
+            Thankfully, we ended up getting our hands on the <a href="https://www.amazon.com/Adafruit-Absolute-Orientation-Fusion-Breakout/dp/B017PEIGIG">Adafruit BNO055</a>, which is a 9 degree of freedom (3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer) sensor that has its own CircuitPython library. This makes the IMU much easier for us to use, as we don’t have to read from defined registers but rather call existing functions from the library. Additionally, the IMU implements its own sensor fusion algorithms, which made our life much more simpler. However, we did have to account for the fact that it has a slow sampling rate (100 Hz). 
+           
+            </p><br><br>
+            <center>
+            <div class="col-md-6">
+              <figure><center>
+                    <img src='img/imuHookup.png' alt=''  width="100%"/>
+                    <figcaption>Figure 11. Wiring diagram for the BNO055</figcaption>
+                </center></figure>
+            </div>
+            </center>
+            <h3 class="title-b">Stepper Motor + Motor Driver</h3>
+            <p class="subtitle-a">
+             Because we have to know the position of the motor at all times, we were deciding between using a DC motor with an encoder or a stepper motor. Stepper motors are DC motors that move in discrete steps. They can either be unipolar, which can reverse current without additional circuitry with its common lead that predetermines its polarity, or bipolar, which needs current to be reversed to reverse the polarity of the poles of the stator. 
+            <br><br>
+            Although a DC motor performs better than a stepper motor in terms of torque, it is more expensive; also, we already had a stepper motor and a driver (<a href="https://www.sparkfun.com/products/12859">Sparkfun Big Easy Driver</a>), so we ultimately ended up using those components. We need a driver with a stepper motor because the principle of stepper motors is the switching of its stator poles at logic HIGH and LOW values in a way so that it takes steps. To do this, we need a way for the Raspberry Pi to develop such logic to control the stepper motor properly, and that’s where the motor driver comes into play.
+            <br><br>
+            The motor that we chose to use has 400 steps per revolution, which means that each step angle is 0.9 degrees. This fine level of control was desirable for our application. We needed to be able to control the motor at different rotation rates. but we encountered a lot of vibrations as the shaft was rotating, which was the result of the delay between inputs being too long. To combat this, we used microstepping so that the motor can spin at a slower rate.
+
+          </p>
+            <br><br>
+            <center>
+            <div class="col-md-6">
+                <figure><center>
+                    <img src='img/motorHookup.png' alt=''  width="100%"/>
+                    <figcaption>Figure 12. Wiring diagram for the motor driver</figcaption>
+                </center></figure>
+            </div>
+            </center>
+
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Hardware Section /-->
+
+
+  <!--/ Software Section /-->
+  <section id="software" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+            Software
+            </h3>
+            <h3 class="title-b">Multithreading</h3>
+             <p class="subtitle-a">
+            As mentioned in the ‘Hardware’ section, our sensor outputs data at 100 Hz, or every 10 ms -- this is too slow for us. Doing everything (reading sensor output, feeding into our controller, controlling our motor properly) serially would take way too long, and we wanted to be able to continuously read sensor data regardless of what other tasks we would be doing. 
+            <br><br>
+            While deciding between threading and multiprocessing, we took into account that we would have to continuously read sensor data and analyze it, so we wanted a module that would allow various functions to share objects within the same memory space. Because only one thread writes to a global list that stores sensor data and we do not have multiple threads writing to the same memory concurrently, we did not have to worry about using locks. 
+            <br><br>
+            Because the controller updates more frequently than that of the IMU, we needed to ensure that the controller only updates after the IMU has a new reading. Otherwise, the controller would be outputting a much stronger torque than necessary, potentially throwing the system unstable. To do so, we made the controller check if the IMU had already taken in a new input. Additionally, we had to make sure that when there is a new output from the controller, the motor abandons whatever it was doing beforehand as to make sure to minimize delays.
+
+           
+            </p><br>
+
+            <h3 class="title-b">Sensor Integration</h3>
+             <p class="subtitle-a">
+            Along with the slow sampling rate, another issue we found with the IMU was the fact that it would output completely off data at random times. We also found that as the IMU moved a lot more, its accuracy would decrease significantly. This is something that we had to account for within our software. Because the gyroscope data especially had a tendency to read unusual data and drift over time, we kept a running average. We also should’ve applied an additional Kalman Filter on the output of the IMU data so that we can have a better estimate of the pendulum position in the times between sensor readings. This would have been especially helpful in allowing us to update the control input more frequently and thus be better at stabilizing the pendulum. 
+
+           
+            </p><br>
+
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Software Section /-->
+
+
+ <!--/ Challenges Section /-->
+  <section id="challenges" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Challenges
+            </h3>
+
+            <h3 class="title-b">Broken Components</h3>
+            <p class="subtitle-a">
+            As mentioned briefly above, we ran into some issues with broken parts, which halted our progress significantly. Not realizing we were using broken motor drivers that didn’t limit current to the stepper motor was a major time loss for us, because we spent a lot of time trying to figure out why the shaft would not rotate by the desired angle. </p><br>
+
+            <h3 class="title-b">Wire Management</h3>
+            <p class="subtitle-a">
+            We needed to attach the IMU to the end of the pendulum so that we could measure the angular velocity and position of the end of the pendulum. This meant that we needed to run a wire down the pendulum. To prevent the wire from tangling or affecting the pendulum motion as it spun, we added a lot of slack to the wire. An alternative to this would’ve been instead to use an encoder to calculate the rotation rate of the pendulum; the encoder would be able to sit on the aluminum disc and a long wire would not need to go to the pendulum.
+             </p><br>
+
+             <h3 class="title-b">3D Printed Pieces</h3>
+            <p class="subtitle-a">
+            As mentioned briefly above, we ran into some issues with broken parts, which halted our progress significantly. Not realizing we We had originally tried to just 3D print a couple of pieces in our pendulum system, but found that the material wasn’t adequate. Specifically, we had tried to 3D print a shaft coupling to connect the motor and the aluminum disc. It was designed so that there could be screws that would attach and tighten the plastic so that it wouldn’t slip when the motor rotated. However, even though we tightened it, the plastic would creep, and the aluminum would slip if the motor tried to change its speed very quickly. Therefore, we had to machine the shaft coupler and use set screws to hold the two ends in place.  </p><br>
+
+            <center>
+            <div class="col-md-6">
+                  <figure><center>
+                    <img src='img/3dPrint.png' alt=''  width="80%"/>
+                    <figcaption>Figure 13. 3D printed shaft coupling that did not work</figcaption>
+                </center></figure>
+            </div>
+            </center>
+
+            <h3 class="title-b">Stepper Motor</h3>
+            <p class="subtitle-a">
+            We faced many challenges with the stepper motor, and we think that this component was the primary reason why our pendulum wasn’t able to self balance. One issue we faced was that we didn’t realize that the first motor driver we used (DRV8825) was not current limiting because the potentiometer was broken, which meant that the motor became extremely hot and damaged. Around the third week of this project, the motor did not respond to our inputs, so we decided to get another one. Luckily, we were able to borrow a friend’s stepper motor and driver.
+            <br><br>
+            We initially were hesitant about using a stepper motor, but we believed it could work because if we used microstepping with a very short delay time, we could achieve a reasonable speed and precision for our motors. However, it wasn’t until when we implemented our controller that we realized that the system just could not work with a stepper motor. A stepper motor is usually chosen for its precision of steps, not for its torque. Because the control inputs to our system was in torques, we needed the motor to be able to vary its rotation rate very quickly, because torque is equal to the moment of inertia times angular acceleration. 
+            <br><br>
+            Additionally, balancing an inverted pendulum requires great precision. Therefore, we wanted to characterize our motor by trying to find a relationship between the speed it outputted and the delay used for the motor to take a step. We set up and ran a test in which we varied the delays between quarter stepping and full stepping to see the bound on the angular velocity of the motor.. We measured the angular velocity of the stepper motor by spinning the motor for a known angle and dividing that number by the time it took to reach it. On one end, if the time delay was too small, the motor did not move the desired number of steps; on the other end, if the time delay was too long, the motor would vibrate too much. The results of this are detailed in the following table. Do note that the slowest angular velocity of the full step regime still had a fair bit of vibration, which was not ideal.
+
+            <br><br>
+            </p>
+
+            <center>
+            <div class="col-md-6">
+                  <figure><center>
+                    <img src='img/lookUpTable.png' alt=''  width="100%"/>
+                    <figcaption>Figure 14. Relationship between delays applied and speed of the motor</figcaption>
+                </center></figure>
+            </div>
+            </center>
+            <p class="subtitle-a">
+            The results of the test acted as a lookup table in our code. Given our desired motor torques, we would find the corresponding velocities that would generate the given torque. If the value desired is between two angular velocities of a given stepper step size, we would find a linear interpolation between the two end values. This isn't quite correct, but it should be a good enough approximation. If the value desired is greater than the maximum allowable angular velocity, we would set it to the minimum delay possible in the full-step mode so that the motor could move at that maximum speed. However, in spite of our efforts, there is still some uncertainty in the measurements because we did not have an encoder.<br><br>
+            Despite our best efforts, the control of the stepper motor was too abrupt, making control of the system very difficult if not impossible. Although we tried our best to quantify the behavior of the motor to get it to behave as we wanted, the motor wasn’t precise enough when we wanted it to be; the difference between stepper motor states was too sudden. Although at short bursts the motor could move very quickly, it couldn’t sustain the acceleration. Also, there wasn’t a smooth continuous transition between the maximum speed of the motor running at half step and the minimum speed of the motor running at full step, so the motor was very jerky at times. Having a maximum bound on the motor also didn’t help: if the pendulum tipped over too much, it wouldn’t be able to recover. Because of the slow update of the IMU, this was especially problematic. Specifically, if the pendulum swung even 20-30 degrees past the desired equilibrium point, the pendulum would fall over.
+           
+            </p>
+
+
+            <br><br>
+
+
+            <div class="line-mf"></div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Testing Section /-->
+
+
+ <!--/ Conclusion Section /-->
+  <section id="conclusion" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Conclusion
+            </h3>
+            <p class="subtitle-a">
+            We accomplished a lot of tasks for this project. On the hardware and mechanical side, we were able to read accurate angle and angular rate readings for the pendulum and validate those readings through testing. We also, to the best of our abilities, characterized the stepper motor, machined the pendulum assembly, and designed housing to store all of our electrical components. On the software side, we were able to  deal with the slow data output rate of the IMU by using multithreading and having that process continuously run in the background. Finally, on the controls side, we modeled our system on Matlab and designed a PID controller that gave us the proper output. 
+            <br><br>
+            However, our major issue came with the stepper motor, which could not move accurately enough at a desired angular velocity. Additionally, choosing an IMU over an encoder made controlling the pendulum harder because the IMU samples slowly and the data is not as real time as it needs to be. The extra wires coming from the IMU ended up becoming an inconvenience as well and sometimes provided external force that we couldn't account for.
+            <br><br>
+             Overall, we definitely learned a lot throughout the entire process, from choosing the right hardware to writing clean and efficient code. We enjoyed the late nights and definitely appreciated a lot of technical advice from the TAs and Prof. Skovira.
+
+            </p>
+          </div>
+        </div>
+        <div class="line-mf"></div><br><br><br>
+      </div>
+    </div>
+  </section>
+  <!--/ Conclusion Section /-->
+
+
+   <!--/ Appendix Section /-->
+  <section id="appendix" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Appendix
+            </h3>
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="title-b">Budget</h3>
+                <center><table style="width:70%">
+                  <tr>
+                    <th><bold><center>Part</center></bold></th>
+                    <th><bold><center>Price</center></bold></th> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mcmaster.com/bars">Aluminum Bar 3/16'' x 1'' x 2' (8975K586)</a></td>
+                    <td>$4.48</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mcmaster.com/bars/=63a3c099914541adbe3f4d9b23f5940ek36psc6x">Aluminum Rod 9/16'' diam x 2ft (8974K46)</a></td>
+                    <td>$5.59</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mcmaster.com/bars">Aluminum Rod 3'' diam x 1'' (1610T19)</a></td>
+                    <td>$8.61</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.amazon.com/Coogam-Stainless-Bearing-Spinner-Replacement/dp/B0721JLJP7/ref=sr_1_4?keywords=r188+bearing&qid=1574278922&sr=8-4">Ball bearings</a></td>
+                    <td>$2.00</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.sparkfun.com/products/12859">Big Easy Driver</a></td>
+                    <td>$19.95</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.amazon.com/STEPPERONLINE-Stepper-Bipolar-Connector-compatible/dp/B00PNEQKC0?ref_=fsclp_pl_dp_1">Wantai Stepper Motor</a></td>
+                    <td>$13.99</td> 
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.amazon.com/Adafruit-Absolute-Orientation-Fusion-Breakout/dp/B017PEIGIG">BNO055</a></td>
+                    <td>$33.07</td> 
+                  </tr>
+                  <tr>
+                    <td><center><b>TOTAL</b></center></td>
+                    <td>$87.69</td> 
+                  </tr>
+                </table></center>
+              </div>
+              <div class="col-md-6">
+                <h3 class="title-b">Acknowledgements</h3> 
+                <p class="subtitle-a">
+                We thank Professor Skovira and ECE 5725 teaching assistants, all of whom provided guidance and encouragement when we ran into problems, as well as providing some electronic parts (IMU). We would also like to thank Tanishq Aggarwal, who lent us a motor driver and stepper motor. We would also like to thank Monika Bandi for being super exceptional for our laser cutting needs, and Emma Sung for being a good pal in the machine shop.  </p>
+              </p>
+              </div>
+            </div>
+            <br><br>
+
+            <h3 class="title-b">Code</h3> 
+                <p class="subtitle-a">
+                The complete Python scripts, along with the derivations & controller designing scripts in Matlab, can be found on our <a href="https://github.coecis.cornell.edu/sh974/FurutaPendulum">Github</a>. Specifically, the files are as follows: 
+             <br>
+             <div class="list-container-2">
+              <ul>
+                <li>deriveEOMLagrange.m - derives the equations of motion</li>
+                <li>thetaDDotsLagrange.m - output of deriveEOMLagrange. 2x1 vector containing the EOM</li>
+                <li>main_furutaPendulum_noControl.m - plotting only the dynamics of the system</li>
+                <li>plantSS.m - state space form of the system from derived dynamics</li>
+                <li>plantSS_paper.m - state space form of system from the paper</li>
+                <li>Parameters.m - parameters of system</li>
+                <li>controllerDesign.m - designing a controller for the system</li>
+                <li>workingController.mat- stable controller, no time delay. Plug into sisotool.</li>
+                <li>workingControllerWithDelay.mat- stable controller with time delay. Plug into sisotool.</li>
+              </ul>
+              <br>
+            </p>
+
+            <h3 class="title-b">Work Contribution</h3> 
+           <center>
+            <div class="col-md-6">
+                  <figure><center>
+                    <img src='img/group.png' alt=''  width="100%"/>
+                    <figcaption>Figure 15. Pendulum boi in the caring arms of Sam and Brian</figcaption>
+                </center></figure>
+            </div>
+            </center>
+            <div class="row">
+              <div class="col-md-6">
+                <center>
+                <h3>Sam (sh974) </h3>
+                <p>
+                Hardware, Software, Website </p>
+              </div></center>
+              <div class="col-md-6">
+                <center>
+                <h3>Brian (bl569) </h3> 
+                <p>
+                Mechanical Design, Controls, Hardware, Software </p>
+              </div></center>
+            </div>
+            <br>
+            <h3 class="title-b">References</h3> 
+            <div class="list-container">
+                <p class="subtitle-a">
+                <ul>
+                <li><a href="https://www.hindawi.com/journals/jcse/2011/528341/">Benjamin Seth Cazzolato and Zebb Prime 2011, “On the Dynamics of the Furuta Pendulum”</a></li>
+                <li><a href="https://docs.python.org/3.4/library/threading.html/">Python Threading Documentation</a></li>
+              </ul> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Appendix Section /-->
+ 
+ 
+ <!--/ Section Contact-Footer Star /-->
+  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.jpg)">
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="copyright-box">
+              <p class="copyright">&copy; Copyright <strong>Brian Lui (bl569) and Sam Hong (sh974)</strong>. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/popper/popper.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="lib/counterup/jquery.counterup.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/typed/typed.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
